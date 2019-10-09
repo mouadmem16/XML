@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repertoire SYSTEM "dtd.dtd" [
+    <!ENTITY aaa "texte à mettre à la place">
+]>
+<?xml-stylesheet href="css.css" type="text/css"?>
+<repertoire maj="12-09-2019">
+    <contact>
+        <email>ssssssssssss</email>
+        <tel type="mobile">ssssssss</tel>
+        <nom>&aaa; </nom>
+        <prenom>iiiiiiiiii</prenom>
+    </contact>
+</repertoire>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl.xsl"?>
+<repertoire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="shema.xsd" maj="1998-02-28">
+    <contact type="ami">
+        <nom>ssssssssss</nom>
+        <prenom>ssssssss</prenom>
+        <tel type="mobile">06 56 87 98 66</tel>
+        <email>ssssssssa@zzzzz.xxxxxx</email>
+    </contact>
+    <contact type="ami">
+        <nom>aaaaaaaaaa</nom>
+        <prenom>ssssssss</prenom>
+        <tel type="mobile">06 56 87 98 66</tel>
+        <email>ssssssssa@zzzzz.xxxxxx</email>
+    </contact>
+    <contact type="ami">
+        <nom>zzzzzzzzzzz</nom>
+        <prenom>ssssssss</prenom>
+        <tel type="mobile">06 56 87 98 66</tel>
+        <email>ssssssssa@zzzzz.xxxxxx</email>
+    </contact>
+    <contact type="ami">
+        <nom>eeeeeeeeeeeeee</nom>
+        <prenom>ssssssss</prenom>
+        <tel type="mobile">06 56 87 98 66</tel>
+        <email>ssssssssa@zzzzz.xxxxxx</email>
+    </contact>
+    <contact type="ami">
+        <nom>rrrrrrrrrrrrrrr</nom>
+        <prenom>ssssssss</prenom>
+        <tel type="mobile">06 56 87 98 66</tel>
+        <email>ssssssssa@zzzzz.xxxxxx</email>
+    </contact>
+</repertoire>

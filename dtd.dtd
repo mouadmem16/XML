@@ -1,0 +1,9 @@
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT repertoire (contact)*>
+<!ELEMENT contact (email+, tel+, nom+, prenom+)>
+<!ATTLIST repertoire maj CDATA #IMPLIED>
+<!ATTLIST tel type (mobile|fix) #REQUIRED>
+

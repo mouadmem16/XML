@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" targetNamespace="http://daaif.net/ns/repertoire"
+    xmlns="http://daaif.net/ns/repertoire"> 
+<xs:element name="repertoire" >
+    <xs:complexType>
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="contact" >
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nom" >
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="[a-zA-Z \-]{3,}"></xs:pattern>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="prénom" type="xs:string" minOccurs="0"/>
+                        <xs:element name="téléphone"  maxOccurs="5">
+                            <xs:complexType >
+                                <xs:simpleContent >
+                                    <xs:extension base="type_tel">
+                                        <xs:attribute name="type"  default="mobile">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="mobile"/>
+                                                    <xs:enumeration value="bureau"/>
+                                                    <xs:enumeration value="domicile"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="email" type="xs:string" minOccurs="0"/>
+                    </xs:sequence>
+                    <xs:attribute name="type" default="ami">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="ami" />
+                                <xs:enumeration value="pro" />
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="maj" type="xs:date" use="required"/>
+    </xs:complexType>
+</xs:element>
+    <xs:simpleType name="type_tel">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="0(5|6)[0-9]{8}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

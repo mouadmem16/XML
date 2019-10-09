@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+<xs:simpleType name="tel_type">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="0(5|6) [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}"></xs:pattern>
+    </xs:restriction>
+</xs:simpleType>
+    
+<xs:simpleType name="email_def">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[a-zA-Z0-9._]{5,}@[a-zA-Z]{4,}.[a-zA-Z]{3,6}"></xs:pattern>
+    </xs:restriction>
+</xs:simpleType>
+    
+<xs:simpleType name='tel_cats'>
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="mobile"></xs:enumeration>
+        <xs:enumeration value="bereau"></xs:enumeration>
+        <xs:enumeration value="domicile"></xs:enumeration>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name='contact_types'>
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="ami"></xs:enumeration>
+        <xs:enumeration value="pro"></xs:enumeration>
+    </xs:restriction>
+</xs:simpleType>
+    
+    
+<xs:complexType name="tel_def">
+    <xs:simpleContent>
+        <xs:extension base="tel_type">
+            <xs:attribute name="type" default="mobile" type="tel_cats" />
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>
+    
+<xs:complexType name="contact_def">
+    <xs:sequence>
+        <xs:element name="nom" type="xs:string" minOccurs="0" maxOccurs="1"></xs:element>
+        <xs:element name="prenom" type="xs:string" minOccurs="0"></xs:element>
+        <xs:element name="tel" minOccurs="0" maxOccurs="5" type="tel_def" />
+        <xs:element name="email" type="email_def" minOccurs="0" maxOccurs="1"></xs:element>
+    </xs:sequence>
+    <xs:attribute name="type" use="required" type="contact_types" />         
+</xs:complexType>
+ 
+<xs:complexType name="refs_def" >
+    <xs:sequence maxOccurs="unbounded" minOccurs="0">
+        <xs:element name="contact" type="contact_def" />
+    </xs:sequence>
+    <xs:attribute name="maj" type="xs:date"></xs:attribute>
+</xs:complexType> 
+
+<xs:element name="repertoire" type="refs_def" />
+
+</xs:schema>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

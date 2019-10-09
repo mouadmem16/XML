@@ -1,0 +1,18 @@
+contact{
+   display:block;
+}
+email{
+    margin-top: 122px;
+    display:block;    
+}
+tel{
+   display:block;    
+}
+tel:before{
+  content: attr(type) " ";
+}
+nom{
+   display:block;    
+}
+
+

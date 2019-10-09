@@ -1,0 +1,12 @@
+1) /*/river[length=max(/*/river/length)]/name
+   /mondial/river[count(id(@country))=max(/*/river/count(id(@country)))]/name
+   /mondial/country[@car_code=/mondial/river[count(located/@country)=max(/*/river/count(located/@country))]/located/@country]/name
+2) /*/country[@car_code=/*/river[length=max(/*/river/length)]/located/@country]/name
+3) /*/country[@car_code=/*/country[name="Germany"]/border/@country]/name
+4) (/*/country[name='Turkey']/encompassed[@continent="europe"]/@percentage * /*/country[name='Turkey']/@area) div 100
+5) sum(/*/country[encompassed[@continent="africa"]]/religion[.='Jewish']/(preceding-sibling::population[1] * @percentage))
+6) /mondial/country[@car_code=(/mondial/sea[name="Atlantic Ocean"]/located/@country)]/name
+7)   concat('terre:  ', sum((/mondial/country/descendant-or-self::area, /mondial/desert/descendant-or-self::area, /mondial/mountain/descendant-or-self::area,  /mondial/island/descendant-or-self::area,  /mondial/airport/descendant-or-self::area))) 
+     concat('mer:  ', sum((/mondial/lake/descendant-or-self::area, /mondial/sea/descendant-or-self::area, /mondial/river/descendant-or-self::area)))
+     concat('terre + mer:  ',sum(/descendant-or-self::area))
+8) /mondial/lake[area=max(/mondial/lake/descendant-or-self::area)]/name
