@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <svg width="600" height="600" style="border: 2px solid black" viewBox="-100,-100,200,200">
+    <circle r="80" cx="0" cy="0" fill="none" stroke="blue"></circle>
+    	<text x="-30" y="-30">MATRIX</text>
+		<text x="-8" y="-63"> 12</text>
+		<text x="65" y="4">3</text>
+		<text x="-5" y="75">6</text>
+		<text x="-75" y="4"> 9</text>
+      <line id="line2" x1="0" y1="0" x2="0" y2="-65" style="stroke: orange; stroke-width: 2" stroke-linecap="round" transform="rotate(0)"></line>
+      <line id="line1" x1="0" y1="0" x2="0" y2="-55" style="stroke: red; stroke-width: 2" stroke-linecap="round" transform="rotate(0)"></line>
+      <line id="line3" x1="0" y1="0" x2="0" y2="-52" style="stroke: yellow; stroke-width: 2" stroke-linecap="round" transform="rotate(0)"></line>
+    <circle r="2" cx="0" cy="0" fill="blue" stroke="blue"></circle>
+</svg>
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+  setInterval(function(){ 
+  	var d = new Date()
+      $('#line2').attr('transform', 'rotate('+d.getSeconds()*(90/15)+')');
+      $('#line1').attr('transform', 'rotate('+d.getMinutes()*(90/15)+')');
+      $('#line3').attr('transform', 'rotate('+(d.getHours()%12)*(90/3)+')');
+  }, 1000);
+</script>
+</body>
+</html>
